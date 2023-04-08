@@ -1,15 +1,15 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 
-function Square({ value }) {
+function Square() {
+  const [value, setValue] = useState(null);
   return (
     <button className="square" onClick={handleClick}>
-      {" "}
-      {value}{" "}
+      {value}
     </button>
   );
 
   function handleClick() {
-    alert("click");
+    setValue("X");
   }
 }
 
@@ -17,14 +17,14 @@ export default function Board() {
   return (
     <div>
       <div className="board-row">
-        <Square value="1" /> <Square value="2" /> <Square value="3" />
-      </div>{" "}
+        <Square /> <Square /> <Square />
+      </div>
       <div className="board-row">
-        <Square value="4" /> <Square value="5" /> <Square value="6" />
-      </div>{" "}
+        <Square /> <Square /> <Square />
+      </div>
       <div className="board-row">
-        <Square value="7" /> <Square value="8" /> <Square value="9" />
-      </div>{" "}
+        <Square /> <Square /> <Square />
+      </div>
     </div>
   );
 }
